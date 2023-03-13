@@ -1,12 +1,7 @@
 return {
   {
     "bluz71/vim-moonfly-colors",
-    as = "moonfly",
     config = function() vim.api.nvim_command "colorscheme moonfly" end,
-  },
-  {
-    "iamcco/markdown-preview.nvim",
-    run = function() vim.fn["mkdp#util#install"]() end,
   },
   { "puremourning/vimspector" },
   { "hashivim/vim-terraform" },
@@ -15,12 +10,12 @@ return {
   { "natebosch/vim-lsc-dart" },
   {
     "akinsho/flutter-tools.nvim",
-    requires = "nvim-lua/plenary.nvim",
-    config = function() require("flutter-tools").setup() end,
+    lazy = false,
+    dependencies = { "nvim-lua/plenary.nvim" },
   },
   {
     "scalameta/nvim-metals",
-    requires = {
+    dependencies = {
       "nvim-lua/plenary.nvim",
       "mfussenegger/nvim-dap",
     },
